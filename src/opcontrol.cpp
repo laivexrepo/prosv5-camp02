@@ -24,7 +24,8 @@ void opcontrol() {
 
   while (true) {
     int power = master.get_analog(ANALOG_LEFT_Y);
-    int turn = master.get_analog(ANALOG_RIGHT_X);
+    //int turn = master.get_analog(ANALOG_RIGHT_X);  // Use right stick for turn
+		int turn = master.get_analog(ANALOG_LEFT_X);		 // Use one stick for Arcade
     int left = power + turn;
     int right = power - turn;
     left_wheels.move(left);
